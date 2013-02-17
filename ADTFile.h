@@ -5,12 +5,10 @@
 
 using namespace std;
 
-class ADTFile
-{
-private:
+class ADTFile {
+public:
 	fstream file;
 
-public:
 	ADTFile();
 	ADTFile(string file, ios_base::openmode mode);
 	void open(string file, ios_base::openmode mode);
@@ -23,4 +21,3 @@ public:
 	bool isEOF();
 	~ADTFile();
 };
-

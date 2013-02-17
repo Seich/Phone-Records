@@ -4,8 +4,8 @@ ADTFile::ADTFile(string file, ios_base::openmode mode) {
 	this->open(file, mode);
 }
 
-void ADTFile::open(string file, ios_base::openmode mode) {
-	this->file.open(file, mode);
+void ADTFile::open(string filename, ios_base::openmode mode) {
+	this->file.open(filename, mode);
 }
 
 int ADTFile::read(char buffer[], size_t size) {
