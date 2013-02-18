@@ -8,8 +8,8 @@
 ADTRecordFile::ADTRecordFile(string filename) {
 	filename = filename;
 	filePath = "records/" + filename;
-	file.open(this->filePath, fstream::in | fstream::out);
-	file_meta.open(this->filePath + "_meta", fstream::in | fstream::out | fstream::app);
+	file.open(this->filePath.c_str(), fstream::in | fstream::out);
+	file_meta.open((this->filePath + "_meta").c_str(), fstream::in | fstream::out | fstream::app);
 	
 	if (!this->file_meta.good())	{
 		this->file_meta.close();
@@ -21,8 +21,7 @@ ADTRecordFile::ADTRecordFile(string filename) {
 }
 
 fstream ADTRecordFile::generateMetaData() {
-	cout << "Creating: " << this->filePath + "_meta" << endl;
-	fstream file_meta(this->filePath + "_meta", fstream::trunc | fstream::out);
+	fstream file_meta((this->filePath + "_meta").c_str(), fstream::trunc | fstream::out);
 	//TODO: look for empty spots in the record file?
 	file_meta.flush();
 	file_meta.close();

@@ -26,7 +26,7 @@ void MetaData::addAvailSpot(int index) {
 }
 
 MetaData::~MetaData() {
-	fstream file(this->filename, fstream::trunc | fstream::out);
+	fstream file(this->filename.c_str(), fstream::trunc | fstream::out);
 
 	if (!this->avail_list.empty()) {
 		for (auto i = this->avail_list.begin(); i != this->avail_list.end(); ++i) {
