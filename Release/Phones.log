@@ -1,0 +1,23 @@
+﻿Build started 2/17/2013 3:43:28 PM.
+     1>Project "C:\Users\Sergio\documents\visual studio 2012\Projects\Phones\Phones\Phones.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Intel\Composer XE 2013\bin\ia32\icl.exe /c /Qvc11 /Qlocation,link,"$(VCInstallDir)\bin" /Zi /nologo /W3 /O2 /Oi /Qipo /Qftz- /D __INTEL_COMPILER=1310 /D _MBCS /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP ADTRecordFile.cpp Main.cpp
+         ADTRecordFile.cpp
+     1>ADTRecordFile.cpp(13): warning #1563: taking the address of a temporary
+           		this->meta_data = MetaData(&generateMetaData());
+           		                           ^
+         
+         Main.cpp
+       Link:
+         C:\Program Files (x86)\Intel\Composer XE 2013\bin\ia32\xilink.exe /OUT:"C:\Users\Sergio\documents\visual studio 2012\Projects\Phones\Release\Phones.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\Phones.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Sergio\documents\visual studio 2012\Projects\Phones\Release\Phones.pdb" /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Sergio\documents\visual studio 2012\Projects\Phones\Release\Phones.lib" /MACHINE:X86 /SAFESEH Release\ADTRecordFile.obj
+         Release\Main.obj
+         Release\MetaData.obj
+         Release\Record.obj
+         Release\RecordSet.obj
+         xilink: executing 'link'
+         Phones.vcxproj -> C:\Users\Sergio\documents\visual studio 2012\Projects\Phones\Release\Phones.exe
+     1>Done Building Project "C:\Users\Sergio\documents\visual studio 2012\Projects\Phones\Phones\Phones.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:09.57

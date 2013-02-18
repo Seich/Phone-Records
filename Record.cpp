@@ -11,6 +11,15 @@ void Record::defineField(int position, int length) {
 	this->fields[position] = make_pair(length, "");
 }
 
+int Record::length() {
+	int l = 0;
+	for(auto iter = this->fields.begin(); iter != this->fields.end(); ++iter) {
+		l += iter->second.first;
+	}
+
+	return l;
+}
+
 void Record::defineFields(int num_fields, int lengths[]) {
 	for (int i = 0; i < num_fields; i++) {
 		this->defineField(i, lengths[i]);
@@ -35,6 +44,18 @@ ostream& operator<<(ostream& stream, const Record& r) {
 	}
 
 	return stream;
+}
+
+string Record::getField(int i) {
+	return this->fields[i].second;
+}
+
+void Record::parseString(string str) {
+	int pos = 0;
+	for (auto iter = this->fields.begin(); iter != this->fields.end() ; ++iter)	{
+		iter->second.second = str.substr(pos, iter->second.first);
+		pos += iter->second.first;
+	}
 }
 
 Record::~Record() {

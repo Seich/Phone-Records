@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-	ADTRecordFile rf("clients");
+	ADTRecordFile rf("phones");
 
 	Record phoneRecord;
 
@@ -12,9 +12,7 @@ int main() {
 	phoneRecord.defineField(1, 2);
 	phoneRecord.defineField(2, 13);
 
-	phoneRecord.setValue(0, "98853820");
 	phoneRecord.setValue(1, "AT");
-	phoneRecord.setValue(2, "12345678901234");
 
 	Record phoneRecord2;
 
@@ -26,7 +24,12 @@ int main() {
 
 	Record phoneRecord3(3, lengths, fields);
 
-	cout << phoneRecord3 << endl << phoneRecord2 << endl << phoneRecord << endl;
+	//rf.update(0, phoneRecord);
+	//rf.remove(4);
+
+	rf.find(1, &phoneRecord);
+
+	cout << phoneRecord;
 
 	system("pause");
 	return 0;

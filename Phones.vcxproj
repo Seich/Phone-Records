@@ -62,7 +62,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ADTFile.cpp" />
     <ClCompile Include="ADTRecordFile.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MetaData.cpp" />
@@ -70,11 +69,11 @@
     <ClCompile Include="RecordSet.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ADTFile.h" />
     <ClInclude Include="ADTRecordFile.h" />
     <ClInclude Include="MetaData.h" />
     <ClInclude Include="Record.h" />
     <ClInclude Include="RecordSet.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

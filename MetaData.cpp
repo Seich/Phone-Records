@@ -1,11 +1,36 @@
 #include "MetaData.h"
 
+MetaData::MetaData() {}
 
-MetaData::MetaData(void)
-{
+MetaData::MetaData(string filename, fstream * f) {
+	this->filename = filename;
+	this->setStream(f);
 }
 
+void MetaData::setStream(fstream * f) {
+	if (f->peek() == std::ifstream::traits_type::eof()) {
+		return;
+	}
 
-MetaData::~MetaData(void)
-{
+	while(f->good()) {
+		char avail[255];
+		f->getline(avail, 255);
+		avail_list.push_back(atoi(avail));
+	}
+}
+
+void MetaData::addAvailSpot(int index) {
+	if (std::find(this->avail_list.begin(), this->avail_list.end(), index) == this->avail_list.end()) {
+		this->avail_list.push_back(index);
+	}
+}
+
+MetaData::~MetaData() {
+	fstream file(this->filename, fstream::app | fstream::out);
+	for (auto i = this->avail_list.begin(); i != this->avail_list.end(); ++i) {
+		file << *i << '\n';
+	}
+
+	file.flush();
+	file.close();
 }

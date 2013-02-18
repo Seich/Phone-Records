@@ -1,27 +1,29 @@
 #pragma once
+#include <fstream>
+#include <string>
 #include "Record.h"
-#include "ADTFile.h"
 #include "RecordSet.h"
 #include "MetaData.h"
-#include <string>
 
 using namespace std;
 
 class ADTRecordFile {
 protected:
-	ADTFile file;
-	ADTFile file_meta;
+	fstream file;
+	fstream file_meta;
 	MetaData meta_data;
 	string filename;
 	string filePath;
+	fstream generateMetaData();
 
 public:
 	ADTRecordFile(string filename);
 	void add(Record r);
-	ADTFile generateMetaData();
-	RecordSet find(int fieldIndex, string value);
+	void find(int fieldIndex, Record * r);
 	void update(int index, Record r);
 	void remove(int index);
-	RecordSet list();
+	int size(Record r);
+
+	string readRecord(int index, Record r);
 	~ADTRecordFile();
 };
